@@ -1,19 +1,30 @@
-import { useState } from 'preact/hooks'
+import { useEffect } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import './app.css'
 
-export function App() {
-  const [count, setCount] = useState(0)
+import Mainlayout from "./layouts/Main";
+import Homepage from "./pages/Home/Homepage";
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
+export function App() {
   return (
-    <>
-      <div class="w-full h-full flex flex-col items-center p-4">
-        <button class="p-2 border rounded" onClick={() => setCount((count) => count + 1)}>
-          Count is {count}
-        </button>
-        <p class='text-center'>
-          Edit <code>src/app.jsx</code> and save to test HMR
-        </p>
-      </div>
-    </>
+    <BrowserRouter>
+      <ScrollToTop/>
+      <Routes>
+        <Route path="/" element={<Mainlayout/>}>
+          <Route index element={<Homepage />} />
+        </Route>
+        <Route path="*" element={<h1>404</h1>} />
+      </Routes>
+    </BrowserRouter>
   )
 }
