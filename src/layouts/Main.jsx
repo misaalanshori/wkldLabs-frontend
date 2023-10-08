@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 
 export default function Mainlayout() {
     return (
-        <div class="flex flex-col w-full">
+        <div class="flex flex-col w-full absolute top-0 min-h-full">
             <NavigationBar />
             <Outlet />
             <Footer />

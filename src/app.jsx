@@ -22,8 +22,8 @@ export function App() {
       <Routes>
         <Route path="/" element={<Mainlayout/>}>
           <Route index element={<Homepage />} />
+          <Route path="*" element={<h1 class="w-full text-center text-3xl my-auto">404</h1>} />
         </Route>
-        <Route path="*" element={<h1>404</h1>} />
       </Routes>
     </BrowserRouter>
   )
