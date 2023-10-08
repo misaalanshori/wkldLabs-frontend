@@ -7,7 +7,7 @@ import astronaut from './assets/astronaut.png'
 
 export default function Homepage() {
     return (
-        <div class="w-full relative pb-48">
+        <div class="w-full relative pb-64">
 
           <div class='flex flex-row py-16 px-4 lg:px-64 gap-4 justify-center items-center text-white bg-gradient-to-b from-aseorange to-[#FF9066]'>
             <img class="h-48 md:h-96" src={ikbal} />
@@ -51,11 +51,17 @@ export default function Homepage() {
             </div>
             <img class="h-96 object-scale-down" src={astronaut}/>
           </div>
+          
+          <div class=" flex flex-col justify-center items-center text-center">
+            <h2 class="text-2xl font-semibold">OUR PRODUCT</h2>
+            <iframe class="rounded-xl max-md:hidden" frameborder="0" src="https://itch.io/embed-upload/8852411?color=333333" allowfullscreen="" width="640" height="380"><a href="https://aselab.itch.io/up-and-up">Play Up and Up on itch.io</a></iframe>
+            <iframe class="rounded-xl md:hidden" frameborder="0" src="https://itch.io/embed/2303533" width="350" height="167"><a href="https://aselab.itch.io/up-and-up">Up and Up by aselab</a></iframe>
+          </div>
           </div>
 
           
           
-          <img class="w-full h-64 object-cover object-top absolute bottom-0" src={bottom} />
+          <img class="w-full h-64 object-cover object-top absolute bottom-0 pointer-events-none" src={bottom} />
         </div>
     )
   }
