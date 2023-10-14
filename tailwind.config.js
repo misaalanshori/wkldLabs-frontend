@@ -7,7 +7,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        'aseorange': '#EF5A22'
+        'aseorange': '#F15A24',
+        'aseorangedark': '#CB3900',
+        'asegrey': '#EAEFF6',
+        'asegreydark': '#393939',
+        'success': '#BAFFA9',
+        'failed': '#FF5B7A',
+        'disabled': '#ABA0A6',
+        'warning': '#FFF1A9'
       },
       fontFamily: {
         'sans': ['Poppins', 'sans-serif']
