@@ -3,5 +3,5 @@
 }
 
 .ASE-button {
-    @apply bg-aseorange-500 hover:bg-aseorangedark-00 text-white font-semibold py-2 px-4;
+    @apply bg-aseorange hover:bg-aseorangedark text-white font-semibold py-2 px-4;
 }
