@@ -9,7 +9,7 @@ export default {
       colors: {
         'aseorange': '#F15A24',
         'aseorangedark': '#CB3900',
-        'asegrey': '#EAEFF6',
+        'asegrey': '#969696',
         'asegreydark': '#393939',
         'success': '#BAFFA9',
         'failed': '#FF5B7A',
