@@ -4,6 +4,7 @@ import './app.css'
 
 import Mainlayout from "./layouts/Main";
 import Homepage from "./pages/Home/Homepage";
+import Login from "./pages/Login/Login.jsx";
 
 import JadwalRuangan from "./pages/JadwalRuangan/JadwalRuangan";
 
@@ -22,6 +23,7 @@ export function App() {
     <BrowserRouter>
       <ScrollToTop/>
       <Routes>
+        <Route path="/login" element={<Login />} />
         <Route path="/" element={<Mainlayout/>}>
           <Route index element={<Homepage />} />
           <Route path="roomschedule" element={<JadwalRuangan />} />
