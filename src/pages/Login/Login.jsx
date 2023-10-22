@@ -23,8 +23,8 @@ export default function Login(){
             <img src={logo} alt="LogoASE" className="w-96" />
             <div class="login">
                 <form className="flex flex-col gap-5 items-center" onSubmit={handleLogin}>
-                    <input type="text" onChange={updateFormData} name="username" placeholder="Username" className="p-2 border rounded-xl border-black drop-shadow-lg shadow-black w-96"/>
-                    <input type="password" onChange={updateFormData} name="password" placeholder="Password" className="p-2 border rounded-xl border-black drop-shadow-lg shadow-black w-96"/>
+                    <input type="text" onChange={updateFormData} name="username" placeholder="Username" className="p-2 border rounded-xl border-black drop-shadow-lg shadow-black lg:w-96 md:w-96 sm:w-56"/>
+                    <input type="password" onChange={updateFormData} name="password" placeholder="Password" className="p-2 border rounded-xl border-black drop-shadow-lg shadow-black lg:w-96 md:w-96 sm:w-56"/>
                     <input type="submit" value="Login" disabled={!submitAvailable} className={" h-12 w-36 rounded-xl " + (submitAvailable ? "bg-aseorange  text-white cursor-pointer": "bg-white text-black border border-asegrey")}/>
                 </form>
             </div>
