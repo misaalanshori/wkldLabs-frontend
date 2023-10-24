@@ -5,6 +5,7 @@ import './app.css'
 import Mainlayout from "./layouts/Main";
 import Homepage from "./pages/Home/Homepage";
 import Login from "./pages/Login/Login.jsx";
+import Inventory from "./pages/Inventory/Inventory.jsx";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -24,6 +25,7 @@ export function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Mainlayout/>}>
           <Route index element={<Homepage />} />
+          <Route path="inventory" element={<Inventory />} />
           <Route path="*" element={<h1 class="w-full text-center text-3xl my-auto">404</h1>} />
         </Route>
       </Routes>
