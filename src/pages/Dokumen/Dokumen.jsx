@@ -1,3 +1,5 @@
+import { FaTrash } from 'react-icons/fa';
+import { BiDotsVerticalRounded, BiFilterAlt } from 'react-icons/bi';
 
 export default function Document () {
     return(
@@ -6,8 +8,8 @@ export default function Document () {
             {/*Div for Search and filter*/}
             <div className="flex flex-row justify-center items-center gap-4 align-middle pb-5">
                 <h1 className="text-4xl font-semibold">Document</h1>
-                <input type="text" placeholder="Search..." className="border border-asegreydark w-11/12 rounded-xl p-1 pl-2"/>
-                <button className="border border-asegreydark w-36 rounded-xl p-1">Filter</button>
+                <input type="text" placeholder="Search..." className="border border-asegreydark w-full rounded-xl p-1 pl-2"/>
+                <button type='button' className="border border-asegreydark rounded-xl p-1"><BiFilterAlt size={20}/></button>
             </div>
                                         {/*Div for new "Table"*/}
 
@@ -17,7 +19,7 @@ export default function Document () {
                         <h1 className="col-span-2">Title</h1>
                         <h1 className="text-center">Status</h1>
                         <h1 className="col-span-2 text-center">Borrower</h1>
-                        <h1 className="text-center">Others</h1>
+                        
                 </div>
                 <div className="flex flex-col border border-asegrey border-solid border-x-0 border-y-2 border-b-0"></div>
             </div>
@@ -38,10 +40,10 @@ export default function Document () {
                             {/*Div for Borrower"*/}
                     <h1 className="col-span-2 text-center">Adam</h1>
                             {/*Div for Buttons"*/}
-                    <div className="flex flex-row gap-2 items-center">
-                        <button className="ASE-button p-2">Borrow</button>
-                        <button className="flex p-2 hover:bg-gray-200 rounded-xl">Delete</button>
-                        <button className="w-10 hover:bg-gray-200 rounded-xl">:</button>
+                    <div className="flex flex-row items-center">
+                        <button className="ASE-button bg-gray-400 hover:bg-gray-400 m-2 mx-auto cursor-not-allowed">Borrow</button>
+                        <button className="p-3 hover:bg-gray-200 rounded-xl mx-auto"><FaTrash size={20}/></button>
+                        <button className="p-3 hover:bg-gray-200 rounded-xl mx-auto"><BiDotsVerticalRounded size={20}/></button>
                     </div>
                 </div>
 
@@ -58,17 +60,17 @@ export default function Document () {
                             {/*Div for Borrower"*/}
                     <h1 className="col-span-2 text-center">-</h1>
                             {/*Div for Buttons"*/}
-                    <div className="flex flex-row gap-2 items-center">
-                        <button className="ASE-button p-2 ">Borrow</button>
-                        <button className="flex p-2 hover:bg-gray-200 rounded-xl">Delete</button>
-                        <button className="w-10 hover:bg-gray-200 rounded-xl">:</button>
+                    <div className="flex flex-row items-center">
+                        <button className="ASE-button m-2 mx-auto">Borrow</button>
+                        <button className="p-3 hover:bg-gray-200 rounded-xl mx-auto"><FaTrash size={20}/></button>
+                        <button className="p-3 hover:bg-gray-200 rounded-xl mx-auto"><BiDotsVerticalRounded size={20}/></button>
                     </div>
                 </div>
             </div>
 
             {/*Div for Button*/}
             <div className="pt-5">
-                <button type="button" className="p-2 bg-white border rounded-full border-black text-black hover:bg-gray-200">New Document</button>
+                <button type="button" className="sticky p-2 bg-white border rounded-full border-black text-black hover:bg-gray-200">New Document</button>
             </div>    
         </div>
     )
