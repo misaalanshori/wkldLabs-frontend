@@ -4,6 +4,7 @@ import './app.css'
 
 import Mainlayout from "./layouts/Main";
 import Homepage from "./pages/Home/Homepage";
+import Agenda from "./pages/Agenda/Agenda";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -22,6 +23,7 @@ export function App() {
       <Routes>
         <Route path="/" element={<Mainlayout/>}>
           <Route index element={<Homepage />} />
+          <Route path="agenda"element={<Agenda />} />
           <Route path="*" element={<h1 class="w-full text-center text-3xl my-auto">404</h1>} />
         </Route>
       </Routes>
