@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import ScheduleCalendar from "./components/ScheduleCalendar";
 import { MdOutlineDelete, MdMoreVert } from "react-icons/md";
 import { PopUpDialog, PopUpActions, PopUpContents, PopUpHeader } from "../../components/PopUpDialog";
+import { Table, TableHeader, TableBody, TableRow, TableCol } from '../../components/Table';
 
 function NewActivityDialog({showDialog, setShowDialog}) {
     const [date, setDate] = useState(new Date());
@@ -94,32 +95,32 @@ export default function JadwalRuangan() {
       <div className="p-16 flex flex-col gap-4">
         <h1 className="text-3xl font-semibold ">Schedule</h1>
         <div className="flex flex-row">
-          <table className="flex-1 h-fit border-separate border-spacing-x-0 border-spacing-y-2">
-            <thead className="">
-                <tr className="text-lg text-left h-4">
-                    <th className="border-b border-black pl-8 font-normal">Name</th>
-                    <th className="border-b border-black px-2 font-normal">Start</th>
-                    <th className="border-b border-black px-2 font-normal">End</th>
-                    <th className="border-b border-black px-2 font-normal"></th>
-                </tr>
-            </thead>
-            <tbody>
-                {scheduleData.map((data) => (
-                <tr className=" bg-asegrey rounded-lg bg-opacity-5">
-                    <td className="rounded-l-lg py-4 px-2 pl-8">{data.name}</td>
-                    <td className="py-4 px-2">{formatDate(data.start)}</td>
-                    <td className="py-4 px-2">{formatDate(data.end)}</td>
-                    <td className="rounded-r-lg py-4">
-                    <span className="ml-auto mr-8 w-fit flex flex-row gap-2">
-                        <MdOutlineDelete size={24} />
-                        <MdMoreVert size={24} />
-                    </span>
-                    </td>
-                </tr>
-                ))}
-            </tbody>
-            
-          </table>
+            <div className="flex-1">
+            <Table>
+                <TableHeader>
+                    <TableCol>Name</TableCol>
+                    <TableCol>Start</TableCol>
+                    <TableCol>End</TableCol>
+                    <TableCol></TableCol>
+                </TableHeader>
+                <TableBody>
+                    {scheduleData.map((data) => (
+                        <TableRow>
+                            <TableCol>{data.name}</TableCol>
+                            <TableCol>{formatDate(data.start)}</TableCol>
+                            <TableCol>{formatDate(data.end)}</TableCol>
+                            <TableCol>
+                                <span className="ml-auto mr-8 w-fit flex flex-row gap-2">
+                                    <MdOutlineDelete size={24} />
+                                    <MdMoreVert size={24} />
+                                </span>
+                            </TableCol>
+                        </TableRow>
+                    ))}
+                </TableBody>
+            </Table>
+            </div>
+
           <ScheduleCalendar currentDate={date} onDateUpdate={setDate} />
         </div>
         <button onClick={()=>setShowDialog(true)} className="self-end rounded-xl w-48 h-8 bg-white text-black border border-asegrey">New Schedule</button>
