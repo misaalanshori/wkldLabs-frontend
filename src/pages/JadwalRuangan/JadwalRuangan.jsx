@@ -10,13 +10,13 @@ function NewActivityDialog({showDialog, setShowDialog}) {
         <PopUpDialog open={showDialog} onChange={setShowDialog}>
             <PopUpHeader text="New Activity"/>
             <PopUpContents>
-                <div className="flex flex-row items-center">
-                    <form className="flex flex-col gap-2">
-                        <table className="border-separate border-spacing-x-2 border-spacing-y-2">
+                <div className="flex flex-row gap-4 items-center">
+                    <form className="flex flex-col gap-2 flex-1">
+                        <table className="w-full border-separate border-spacing-x-2 border-spacing-y-2">
                             <tbody>
                                 <tr>
                                     <td className="w-32">Meeting Name</td>
-                                    <td><input className="aseinput" type="text" /></td>
+                                    <td><input className="aseinput w-full" type="text" /></td>
                                 </tr>
                                 <tr>
                                     <td className="w-32">Start Time</td>
@@ -38,7 +38,14 @@ function NewActivityDialog({showDialog, setShowDialog}) {
                         </table>
                     </form>
                     <div>
-                        <ScheduleCalendar currentDate={date} onDateUpdate={setDate} />
+                        <ScheduleCalendar currentDate={date} onDateUpdate={setDate} markedDates={[
+                                {
+                                    start: new Date("11 Oct 2023, 15:00"),
+                                    end: new Date("14 Oct 2023, 12:00"),
+                                    state: "selected"
+                                }
+                            ]
+                        } />
                     </div>
                 </div>
                 
@@ -59,13 +66,13 @@ export default function JadwalRuangan() {
         setScheduleData([
             {
                 name: "Nama Kegiatan",
-                start: new Date("11 June 2023, 15:00"),
-                end: new Date("12 June 2023, 12:00")
+                start: new Date("11 Oct 2023, 15:00"),
+                end: new Date("12 Oct 2023, 12:00")
             },
             {
                 name: "Nama Kegiatan",
-                start: new Date("23 June 2023, 12:00"),
-                end: new Date("24 June 2023, 12:00")
+                start: new Date("23 Oct 2023, 12:00"),
+                end: new Date("24 Oct 2023, 12:00")
             },
             {
                 name: "Nama Kegiatan 1 2 3 4 5",
@@ -121,7 +128,19 @@ export default function JadwalRuangan() {
             </Table>
             </div>
 
-          <ScheduleCalendar currentDate={date} onDateUpdate={setDate} />
+          <ScheduleCalendar currentDate={date} onDateUpdate={setDate} markedDates={[
+                {
+                    start: new Date("11 Oct 2023, 15:00"),
+                    end: new Date("14 Oct 2023, 12:00"),
+                    state: "occupied"
+                },
+                {
+                    start: new Date("23 Oct 2023, 12:00"),
+                    end: new Date("24 Oct 2023, 12:00"),
+                    state: "occupied"
+                }
+            ]
+          } />
         </div>
         <button onClick={()=>setShowDialog(true)} className="self-end rounded-xl w-48 h-8 bg-white text-black border border-asegrey">New Schedule</button>
         <NewActivityDialog showDialog={showDialog} setShowDialog={setShowDialog}/>
