@@ -10,7 +10,7 @@ function NewActivityDialog({showDialog, setShowDialog}) {
         <PopUpDialog open={showDialog} onChange={setShowDialog}>
             <PopUpHeader text="New Activity"/>
             <PopUpContents>
-                <div className="flex flex-row gap-4 items-center">
+                <div className="flex flex-col md:flex-row gap-4 items-center">
                     <form className="flex flex-col gap-2 flex-1">
                         <table className="w-full border-separate border-spacing-x-2 border-spacing-y-2">
                             <tbody>
@@ -100,8 +100,8 @@ export default function JadwalRuangan() {
     console.log(date)
     return (
       <div className="p-16 flex flex-col gap-4">
-        <h1 className="text-3xl font-semibold ">Schedule</h1>
-        <div className="flex flex-row">
+        <h1 className="text-3xl font-semibold max-sm:text-center">Schedule</h1>
+        <div className="flex flex-col-reverse max-lg:items-center lg:flex-row">
             <div className="flex-1">
             <Table>
                 <TableHeader>
@@ -117,9 +117,14 @@ export default function JadwalRuangan() {
                             <TableCol>{formatDate(data.start)}</TableCol>
                             <TableCol>{formatDate(data.end)}</TableCol>
                             <TableCol>
-                                <span className="ml-auto mr-8 w-fit flex flex-row gap-2">
-                                    <MdOutlineDelete size={24} />
-                                    <MdMoreVert size={24} />
+                                <span className="ml-auto w-fit flex flex-row gap-2">
+                                    <button onClick={()=>alert("DELETE " + data.name )}>
+                                        <MdOutlineDelete size={24} />
+                                    </button>
+                                    <button onClick={()=>alert("MORE " + data.name )}>
+                                        <MdMoreVert size={24} />
+                                    </button>
+                                    
                                 </span>
                             </TableCol>
                         </TableRow>
@@ -127,23 +132,26 @@ export default function JadwalRuangan() {
                 </TableBody>
             </Table>
             </div>
-
-          <ScheduleCalendar currentDate={date} onDateUpdate={setDate} markedDates={[
-                {
-                    start: new Date("11 Oct 2023, 15:00"),
-                    end: new Date("14 Oct 2023, 12:00"),
-                    state: "occupied"
-                },
-                {
-                    start: new Date("23 Oct 2023, 12:00"),
-                    end: new Date("24 Oct 2023, 12:00"),
-                    state: "occupied"
-                }
-            ]
-          } />
+            <div className="flex flex-col gap-4 ">
+                <ScheduleCalendar currentDate={date} onDateUpdate={setDate} markedDates={[
+                        {
+                            start: new Date("11 Oct 2023, 15:00"),
+                            end: new Date("14 Oct 2023, 12:00"),
+                            state: "occupied"
+                        },
+                        {
+                            start: new Date("23 Nov 2023, 12:00"),
+                            end: new Date("24 Nov 2023, 12:00"),
+                            state: "occupied"
+                        }
+                    ]
+                } />
+                <button onClick={()=>setShowDialog(true)} className="self-center lg:self-end rounded-xl w-48 h-8 bg-white text-black border border-asegrey">New Schedule</button>
+                <NewActivityDialog showDialog={showDialog} setShowDialog={setShowDialog}/>
+            </div>
+          
         </div>
-        <button onClick={()=>setShowDialog(true)} className="self-end rounded-xl w-48 h-8 bg-white text-black border border-asegrey">New Schedule</button>
-        <NewActivityDialog showDialog={showDialog} setShowDialog={setShowDialog}/>
+        
       </div>
     );
 }
