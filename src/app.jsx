@@ -7,7 +7,7 @@ import Homepage from "./pages/Home/Homepage";
 import Login from "./pages/Login/Login.jsx";
 
 import JadwalRuangan from "./pages/JadwalRuangan/JadwalRuangan";
-import Pertemuan from "./pages/DaftarP/DaftarPertemuan";
+import Pertemuan from "./pages/DaftarPertemuan/DaftarPertemuan";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
