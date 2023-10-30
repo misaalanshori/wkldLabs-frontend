@@ -99,7 +99,7 @@ export default function JadwalRuangan() {
     }
     console.log(date)
     return (
-      <div className="p-16 flex flex-col gap-4">
+      <div className="p-16 flex flex-col gap-4 flex-1">
         <h1 className="text-3xl font-semibold max-sm:text-center">Schedule</h1>
         <div className="flex flex-col-reverse max-lg:items-center lg:flex-row">
             <div className="flex-1">
