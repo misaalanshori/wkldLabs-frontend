@@ -33,27 +33,27 @@ export default function ScheduleCalendar({ currentDate, onDateUpdate, readOnly }
 
     for (let i = 1; i <= totalDays + firstDay; i++) {
       if (i <= firstDay) {
-        days.push(<div key={i} className="text-gray-400 flex items-center justify-center aspect-square">{prevTotalDays - (firstDay - i)}</div>);
+        days.push(<div key={i} className="text-gray-400 flex justify-center aspect-square">{prevTotalDays - (firstDay - i)}</div>);
       } else {
         days.push(
           <div
             key={i}
-            className={"text-black flex items-center justify-center aspect-square rounded-full cursor-pointer" + (viewCurrentMonth && i - firstDay === currentDate.getDate() ? " bg-green-400 font-medium" : "")}
+            className={"text-black flex  justify-center aspect-square rounded-full cursor-pointer w-full" }
             onClick={() => updateDateSelection(i - firstDay)}
-          >{i - firstDay}</div>
+          ><span className={"flex flex-row justify-center rounded-full items-center h-8 p-1 aspect-square "+ (viewCurrentMonth && i - firstDay === currentDate.getDate() ? " bg-green-400 font-medium" : "")}>{i - firstDay}</span></div>
         );
       }
     }
 
     const restOfTheDays = 7 - (totalDays + firstDay) % 7;
     for (let i = 1; i <= restOfTheDays; i++) {
-      days.push(<div key={i + 100} className="text-gray-300 flex items-center justify-center aspect-square">{i}</div>);
+      days.push(<div key={i + 100} className="text-gray-300 flex justify-center aspect-square">{i}</div>);
     }
     return days;
   };
 
   return (
-    <div className="w-120 h-fit text-center p-4 mx-2  bg-neutral-100 rounded-md font-light border">
+    <div className="w-120 h-fit text-center p-10 mx-2  bg-neutral-100 rounded-md font-light border">
       <div className="flex flex-row items-center mb-7 justify-between">
         <button onClick={() => setDate(new Date(date.getFullYear(), date.getMonth() - 1))} type="button" class="bg bg-aseorange border-aseorange text-white border p-2 font-light rounded-2xl px-4 w-32 h-fit ">Prev</button>
         {/*}
@@ -74,7 +74,7 @@ export default function ScheduleCalendar({ currentDate, onDateUpdate, readOnly }
         <div>Fr</div>
         <div>Sa</div>
       </div>
-      <div className="grid grid-cols-7 gap-1 text-center h-56">
+      <div className="grid grid-cols-7 gap-1 text-center h-fit">
         {renderCalendar()}
       </div>
     </div>
