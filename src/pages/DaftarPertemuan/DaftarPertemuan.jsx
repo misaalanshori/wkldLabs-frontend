@@ -54,7 +54,7 @@ function NewPertemuanDialog({showDialog, setShowDialog}) {
 export default function Pertemuan(){
     const [showDialog, setShowDialog] = useState(false);
     return (
-        <div className="relative w-full flex-1 h-fit border-separate border-spacing-x-0 border-spacing-y-4 p-10" >
+        <div className="overflow-x-auto relative w-full flex-1 h-fit border-separate border-spacing-x-0 border-spacing-y-4 p-10 flex flex-col" >
             <h1 className="font-semibold text-3xl mb-2">Daftar Pertemuan</h1>
             <Table>
                 <TableHeader>
@@ -91,7 +91,7 @@ export default function Pertemuan(){
                     </TableRow>
                 </TableBody>
             </Table>
-            <button onClick={() => setShowDialog(true)} class="bottom-0 right-10 absolute self-end border-2 bg-white hover:bg-asegrey text-black font-normal px-9 py-1 my-10 rounded-full">New Meeting</button>
+            <button onClick={() => setShowDialog(true)} class="item-right self-end border-2 bg-white hover:bg-asegrey text-black font-normal px-9 py-1 my-10 rounded-full">New Meeting</button>
             <NewPertemuanDialog showDialog={showDialog} setShowDialog={setShowDialog}/>
         </div>
     )
