@@ -28,9 +28,9 @@ export function TableBody({children}) {
     )
 }
 
-export function TableRow({children}) {
+export function TableRow({children, onClick}) {
     return (
-        <tr className="bg-asegrey rounded-lg bg-opacity-10">
+        <tr className="bg-asegrey rounded-lg bg-opacity-10 hover:bg-opacity-20" onClick={onClick}>
             {children.map((e, i) => {
                 let classes = "py-4 px-2";
                 if (i == 0) {
