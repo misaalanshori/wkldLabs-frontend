@@ -26,25 +26,22 @@ function NewMeeting({showDialog, setShowDialog}) {
                                     <td>
                                         <div className='flex flex-row gap-2'>
                                             <input type="date" name="tgl-event" id="tgl-event" className='block w-36 aseinput pl-2' />
+                                            <h1 className=' my-auto'>Time</h1>
                                             <input type="time" name="time-event" id="tevt" className='aseinput'/>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="width:20%"><h1 className='inline-block'>Paticipant</h1></td>
+                                    <td style="width:20%" className='flex flex-col'>
+                                        <h1 className='inline-block'>Paticipant</h1>
+                                    </td>
                                     <td>
                                         <div>
-                                            <textarea name="participant" id="ppl" cols="30" rows="4" className='border border-asegrey'></textarea>
-
+                                            <textarea name="participant" id="ppl" rows="4" className='border border-asegrey w-full pl-2' placeholder='Add participant...'></textarea>
                                         </div>
                                     </td>
                                 </tr>
                             </table>
-                            
-                            <div className='flex flex-row items-center'>
-                                
-                                
-                            </div>
                         </form>
                     </div>
                 </PopUpContents>
