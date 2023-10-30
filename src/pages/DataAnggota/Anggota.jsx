@@ -54,7 +54,7 @@ function NewMemberDialog({ showDialog, setShowDialog }) {
 export default function Anggota() {
     const [showDialog, setShowDialog] = useState(false);
     return (
-        <div className="p-4 w-full flex flex-col" >
+        <div className="p-4 w-full flex flex-col overflow-x-auto" >
             <h1 className="text-3xl font-medium my-5 mx-5">Data Anggota</h1>
             <Table>
                 <TableHeader>
