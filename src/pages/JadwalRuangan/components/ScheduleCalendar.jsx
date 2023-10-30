@@ -109,7 +109,7 @@ export default function ScheduleCalendar({currentDate, onDateUpdate, readOnly, m
         <div>Fr</div>
         <div>Sa</div>
       </div>
-      <div className="grid grid-cols-7 text-center h-56">
+      <div className="grid grid-cols-7 text-center h-fit">
         {renderCalendar()}
       </div>
     </div>
