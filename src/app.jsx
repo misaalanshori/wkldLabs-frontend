@@ -8,6 +8,8 @@ import Login from "./pages/Login/Login.jsx";
 
 import JadwalRuangan from "./pages/JadwalRuangan/JadwalRuangan";
 import Pertemuan from "./pages/DaftarPertemuan/DaftarPertemuan";
+import Anggota from "./pages/DataAnggota/Anggota"
+
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -29,6 +31,7 @@ export function App() {
           <Route index element={<Homepage />} />
           <Route path="roomschedule" element={<JadwalRuangan />} />
           <Route path="meetingschedule" element={<Pertemuan />} />
+          <Route path="memberdata" element={<Anggota />} />
           <Route path="*" element={<h1 class="w-full text-center text-3xl my-auto">404</h1>} />
         </Route>
       </Routes>
