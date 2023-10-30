@@ -10,7 +10,7 @@ function NewActivityDialog({showDialog, setShowDialog}) {
         <PopUpDialog open={showDialog} onChange={setShowDialog}>
             <PopUpHeader text="New Activity"/>
             <PopUpContents>
-                <div className="flex flex-col md:flex-row gap-4 items-center">
+                <div className="flex flex-col md:flex-row gap-4 items-center overflow-x-hidden">
                     <form className="flex flex-col gap-2 flex-1">
                         <table className="w-full border-separate border-spacing-x-2 border-spacing-y-2">
                             <tbody>
