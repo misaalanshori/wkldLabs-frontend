@@ -5,38 +5,37 @@ import { Table, TableHeader, TableBody, TableRow, TableCol } from '../../compone
 function NewInventoryDialog({showDialog, setShowDialog}){
     return (
         <PopUpDialog open={showDialog} onChange={setShowDialog}>
-            <PopUpHeader text="New Item">
-                <PopUpContents>
-                    <div className="flex flex-row items-center">
-                        <form className="flex flex-col gap-2">
-                            <table className="border-separate border-spacing-x-2 border-spacing-y-2">
-                                <tbody>
-                                <tr>
-                                    <td className="w-32">Item Name</td>
-                                    <td><input className="aseinput" type="text" /></td>
-                                </tr>
-                                <tr>
-                                    <td className="w-32">Unit</td>
-                                    <td><input className="aseinput" type="number" /></td>
-                                </tr>
-                                <tr>
-                                    <td className="w-32">Date</td>
-                                    <td><input className="aseinput" type="time" /></td>
-                                </tr>
-                                <tr>
-                                    <td className="w-32">Picture</td>
-                                    <td><input className="aseinput" type="image" /></td>
-                                </tr>
-                                <tr>
-                                    <td className="w-32">Description</td>
-                                    <td><input className="aseinput" type="textarea" /></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </form>
-                    </div>
-                </PopUpContents>
-            </PopUpHeader>
+            <PopUpHeader text="New Item"></PopUpHeader>
+            <PopUpContents>
+                <div className="flex flex-row gap-4 items-center">
+                    <form className="flex flex-col gap-2 flex-1">
+                        <table className="w-full border-separate border-spacing-x-2 border-spacing-y-2">
+                            <tbody>
+                            <tr>
+                                <td className="w-32">Item Name</td>
+                                <td><input className="aseinput w-full" type="text" /></td>
+                            </tr>
+                            <tr>
+                                <td className="w-32">Unit</td>
+                                <td><input className="aseinput w-full" type="number" /></td>
+                            </tr>
+                            <tr>
+                                <td className="w-32">Date</td>
+                                <td><input className="aseinput w-full" type="date" /></td>
+                            </tr>
+                            <tr>
+                                <td className="w-32">Picture</td>
+                                <td><input className="aseinput w-full" type="file" /></td>
+                            </tr>
+                            <tr>
+                                <td className="w-32">Description</td>
+                                <td><input className="aseinput w-full" type="textarea" /></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </PopUpContents>
             <PopUpActions>
                 <button className="py-1 px-4 rounded-full bg-aseorange text-white" onClick={() => {alert("Pura Puranya di save");setShowDialog(false)}}>Save</button>
                 <button className="py-1 px-4 rounded-full bg-aseorange text-white" onClick={()=>setShowDialog(false)}>Close</button>
@@ -78,9 +77,9 @@ export default function Inventory(){
         setSelectedData(sampleData[0])
     }, []);
     return (
-        <div className="flex flex-col p-20 gap-4">
+        <div className="flex flex-col p-20 gap-4 overflow-x-auto">
             <h1 className="text-5xl">Inventaris</h1>
-            <div className="flex flex-row gap-4">
+            <div className="flex flex-col-reverse max-lg:items-center lg:flex-row gap-4">
                 <div className="flex-1">
                     <Table>
                         <TableHeader>
@@ -111,7 +110,7 @@ export default function Inventory(){
                 <div className="flex flex-col justify-center items-center bg-asegrey bg-opacity-10 p-4 gap-2">
                     <img src={selectedData?.gambar} alt="" className="w-56 object-cover rounded-xl"/>
                     <form action="">
-                        <table>
+                        <table className="border-separate border-spacing-x-2 border-spacing-y-2">
                             <tr>
                                 <td>ID</td>
                                 <td>
