@@ -4,7 +4,6 @@ import { PopUpDialog, PopUpHeader, PopUpContents, PopUpActions } from "../../com
 import { useState } from "react";
 
 function NewMeeting({showDialog, setShowDialog}) {
-    const [open, setOpen] = useState(false);
     return(
         <div>
             <PopUpDialog open={showDialog} onChange={setShowDialog}>
@@ -84,8 +83,12 @@ export default function Jadwal() {
                             </TableCol>
                             <TableCol>
                                 <div className='flex flex-row items-center'>
-                                <MdOutlineDelete size={24} />
-                                <MdMoreVert size={24} />
+                                    <button onClick={()=>alert("DELETE ")}>
+                                        <MdOutlineDelete size={24} />
+                                    </button>
+                                    <button onClick={()=>alert("MORE ")}>
+                                        <MdMoreVert size={24} />
+                                    </button>
                                 </div>
                             </TableCol>
                         </TableRow>
@@ -103,8 +106,12 @@ export default function Jadwal() {
                             </TableCol>
                             <TableCol>
                                 <div className='flex flex-row items-center'>
-                                <MdOutlineDelete size={24} />
-                                <MdMoreVert size={24} />
+                                    <button onClick={()=>alert("DELETE ")}>
+                                        <MdOutlineDelete size={24} />
+                                    </button>
+                                    <button onClick={()=>alert("MORE ")}>
+                                        <MdMoreVert size={24} />
+                                    </button>
                                 </div>
                             </TableCol>
                         </TableRow>
@@ -123,9 +130,13 @@ export default function Jadwal() {
                             </div>
                             </TableCol>
                             <TableCol>
-                                <div className='flex flex-row'>
-                                <MdOutlineDelete size={24} />
-                                <MdMoreVert size={24} />
+                                <div className='flex flex-row items-center'>
+                                    <button onClick={()=>alert("DELETE ")}>
+                                        <MdOutlineDelete size={24} />
+                                    </button>
+                                    <button onClick={()=>alert("MORE ")}>
+                                        <MdMoreVert size={24} />
+                                    </button>
                                 </div>
                             </TableCol>
                         </TableRow>
