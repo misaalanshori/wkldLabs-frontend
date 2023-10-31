@@ -5,6 +5,7 @@ import './app.css'
 import Mainlayout from "./layouts/Main";
 import Homepage from "./pages/Home/Homepage";
 import Login from "./pages/Login/Login.jsx";
+import Inventory from "./pages/Inventory/Inventory.jsx";
 
 import JadwalRuangan from "./pages/JadwalRuangan/JadwalRuangan";
 import Pertemuan from "./pages/DaftarPertemuan/DaftarPertemuan";
@@ -29,6 +30,7 @@ export function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Mainlayout/>}>
           <Route index element={<Homepage />} />
+          <Route path="inventory" element={<Inventory />} />
           <Route path="roomschedule" element={<JadwalRuangan />} />
           <Route path="meetingschedule" element={<Pertemuan />} />
           <Route path="memberdata" element={<Anggota />} />
