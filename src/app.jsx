@@ -4,6 +4,7 @@ import './app.css'
 
 import Mainlayout from "./layouts/Main";
 import Homepage from "./pages/Home/Homepage";
+import Agenda from "./pages/Agenda/Agenda";
 import Login from "./pages/Login/Login.jsx";
 
 import Jadwal from "./pages/Jadwal/Jadwal";
@@ -32,6 +33,7 @@ export function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Mainlayout/>}>
           <Route index element={<Homepage />} />
+          <Route path="agenda"element={<Agenda />} />
           <Route path="inventory" element={<Inventory />} />
           <Route path="roomschedule" element={<JadwalRuangan />} />
           <Route path="schedule" element={<Jadwal />} />
