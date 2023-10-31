@@ -5,11 +5,11 @@ import { useState } from "react";
 
 function NewMeeting({showDialog, setShowDialog}) {
     return(
-        <div>
+        <div className=''>
             <PopUpDialog open={showDialog} onChange={setShowDialog}>
                 <PopUpHeader text="New Event"/>
                 <PopUpContents>
-                    <div className='flex flex-row'>
+                    <div className='flex flex-col overflow-x-scroll items-center md:flex'>
                         <form action="" className='flex flex-col w-full'>
                             <table className='border-separate border-spacing-y-4'>
                                 <tr className=''>
@@ -45,7 +45,7 @@ function NewMeeting({showDialog, setShowDialog}) {
                     </div>
                 </PopUpContents>
                 <PopUpActions>
-                    <button id='add' className='ASE-button gap-2' onClick={()=>setShowDialog(false)}>Save</button>
+                    <button id='add' className='ASE-button gap-2' onClick={()=>{setShowDialog(false);alert("Pura Puranya di save")}}>Save</button>
                     <button id='cancel' className='ASE-button bg-white text-black border-black border hover:bg-gray-300' onClick={()=>setShowDialog(false)}>Cancel</button>
                 </PopUpActions>
             </PopUpDialog>
@@ -56,9 +56,9 @@ function NewMeeting({showDialog, setShowDialog}) {
 export default function Jadwal() {
     const [showDialog, setOpen] = useState(false);
     return(
-        <div className='px-10 pb-16 w-full flex flex-col'>
+        <div className='px-10 pb-16 w-full flex flex-col overflow-x-hidden'>
             <h1 className='text-3xl font-semibold pt-16 pb-2'>Jadwal</h1>
-            <div className='' >
+            <div className='overflow-x-auto' >
                 <Table>
                     <TableHeader>
                         <TableCol>Activity</TableCol>
