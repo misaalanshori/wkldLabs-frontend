@@ -10,6 +10,7 @@ import Jadwal from "./pages/Jadwal/Jadwal";
 import Inventory from "./pages/Inventory/Inventory.jsx";
 import JadwalRuangan from "./pages/JadwalRuangan/JadwalRuangan";
 import Pertemuan from "./pages/DaftarPertemuan/DaftarPertemuan";
+import Document from "./pages/Dokumen/Dokumen";
 import Anggota from "./pages/DataAnggota/Anggota"
 
 
@@ -36,6 +37,7 @@ export function App() {
           <Route path="schedule" element={<Jadwal />} />
           <Route path="meetingschedule" element={<Pertemuan />} />
           <Route path="memberdata" element={<Anggota />} />
+          <Route path="documents" element={<Document />} />
           <Route path="*" element={<h1 class="w-full text-center text-3xl my-auto">404</h1>} />
         </Route>
       </Routes>
