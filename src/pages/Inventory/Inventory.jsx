@@ -78,7 +78,7 @@ export default function Inventory(){
     }, []);
     return (
         <div className="flex flex-col p-20 gap-4 overflow-x-auto">
-            <h1 className="text-5xl">Inventaris</h1>
+            <h1 className="text-5xl max-lg:text-center">Inventaris</h1>
             <div className="flex flex-col-reverse max-lg:items-center lg:flex-row gap-4">
                 <div className="flex-1">
                     <Table>
