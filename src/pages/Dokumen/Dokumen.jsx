@@ -10,7 +10,7 @@ function NewMeeting({showDialog, setShowDialog}) {
             <PopUpDialog open={showDialog} onChange={setShowDialog}>
                 <PopUpHeader text="New Document"/>
                 <PopUpContents>
-                    <div className='flex flex-col overflow-x-scroll items-center md:flex'>
+                    <div className='flex flex-col overflow-x-auto items-center md:flex'>
                         <form action="" className='flex flex-col w-full'>
                             <table className='border-separate border-spacing-y-4'>
                                 <tr className=''>
@@ -100,10 +100,23 @@ export default function Document () {
     return(
         <div className="w-full relative p-10 mb-36">
             {/*Div for Search and filter*/}
-            <div className="flex flex-row justify-center items-center gap-4 align-middle pb-5">
-                <h1 className="text-4xl font-semibold">Document</h1>
-                <input type="text" placeholder="Search..." className="border border-asegreydark w-full rounded-xl p-1 pl-2"/>
-                <button type='button' className="border border-asegreydark rounded-xl p-1"><BiFilterAlt size={20}/></button>
+            <div className="flex flex-col justify-center gap-2 align-middle pb-5">
+                <div>
+                    <h1 className="text-4xl font-semibold">Document</h1>
+                </div>
+                <div className='flex flex-row gap-2'>
+                    <input type="text" placeholder="Search..." className="border border-asegreydark w-full rounded-xl p-1 pl-2"/>
+                    <details className='relative'>
+                        <summary className="border border-asegreydark rounded-xl p-1 list-none mb-1"><BiFilterAlt size={20}/></summary>
+                        <ul className='fixed right-0 p-2 shadow z-[1] bg-aseorange rounded-xl w-32 text-center text-white mr-6' >
+                            <li><a href="#" className='block px-4 py-2 hover:bg-gray-100 dark:hover:bg-aseorangedark dark:hover:text-white'>Alphabet</a></li>
+                            <li><a href="#" className='block px-4 py-2 hover:bg-gray-100 dark:hover:bg-aseorangedark dark:hover:text-white'>Borrowed</a></li>
+                            <li><a href="#" className='block px-4 py-2 hover:bg-gray-100 dark:hover:bg-aseorangedark dark:hover:text-white'>Available</a></li>
+                        </ul>
+                    </details>
+                    
+                </div>
+                
             </div>
 
             {/*Div for new "Table"*/}
