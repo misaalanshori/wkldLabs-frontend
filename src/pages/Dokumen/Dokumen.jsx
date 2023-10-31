@@ -107,7 +107,7 @@ export default function Document () {
                 <div className='flex flex-row gap-2'>
                     <input type="text" placeholder="Search..." className="border border-asegreydark w-full rounded-xl p-1 pl-2"/>
                     <details className='relative'>
-                        <summary className="border border-asegreydark rounded-xl p-1 list-none mb-1"><BiFilterAlt size={20}/></summary>
+                        <summary className=" border border-asegreydark rounded-xl p-1 list-none mb-1 hover:bg-gray-300"><BiFilterAlt size={20}/></summary>
                         <ul className='fixed right-0 p-2 shadow z-[1] bg-aseorange rounded-xl w-32 text-center text-white mr-6' >
                             <li><a href="#" className='block px-4 py-2 hover:bg-gray-100 dark:hover:bg-aseorangedark dark:hover:text-white'>Alphabet</a></li>
                             <li><a href="#" className='block px-4 py-2 hover:bg-gray-100 dark:hover:bg-aseorangedark dark:hover:text-white'>Borrowed</a></li>
