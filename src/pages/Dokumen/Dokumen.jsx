@@ -1,5 +1,7 @@
 import { FaTrash } from 'react-icons/fa';
 import { BiDotsVerticalRounded, BiFilterAlt } from 'react-icons/bi';
+import { Table, TableHeader, TableBody, TableRow, TableCol } from '../../components/Table';
+import { MdOutlineDelete, MdMoreVert } from "react-icons/md";
 
 export default function Document () {
     return(
