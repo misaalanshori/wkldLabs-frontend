@@ -17,7 +17,27 @@
     <meta property="og:title" content="ASE Lab - wkldLabs" />
     <meta property="og:description" content="Advanced Software Engineering Laboratory" />
     <meta property="og:image" content="https://wkldlabs.misa.pw/meta.jpg" />
-
+    <script>
+      (function (m, a, z, e) {
+        var s, t;
+        try {
+          t = m.sessionStorage.getItem('maze-us');
+        } catch (err) {}
+      
+        if (!t) {
+          t = new Date().getTime();
+          try {
+            m.sessionStorage.setItem('maze-us', t);
+          } catch (err) {}
+        }
+      
+        s = a.createElement('script');
+        s.src = z + '?t=' + t + '&apiKey=' + e;
+        s.async = true;
+        a.getElementsByTagName('head')[0].appendChild(s);
+        m.mazeUniversalSnippetApiKey = e;
+      })(window, document, 'https://snippet.maze.co/maze-universal-loader.js', 'feeb0bef-2635-406d-a903-d4f0ca0d409b');
+      </script>
     <title>Advanced Software Engineering</title>
   </head>
   <body>
